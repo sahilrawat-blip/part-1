@@ -9,7 +9,7 @@ void fput(std::string filename){
     if(check_file_exist(filename,&statbuf)==1){ //check whether file exist or not
 
         check_write_permission(filename);// exits the program if the file does not have write permission for the user
-
+        if(!myfile)return ;
         myfile.open(filename.c_str(),std::ios::app);
         std::getline(std::cin,temp);
         while(temp.compare("//end")!=0){
